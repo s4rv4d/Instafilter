@@ -7,25 +7,46 @@
 //
 
 import SwiftUI
+import CoreImage
+import CoreImage.CIFilterBuiltins
 
 struct ContentView: View {
-    
-    @State private var showingActionSheet = false
-    @State private var backgroundColor = Color.white
+
+    @State private var image: Image?
     
     var body: some View {
-        Text("Hello, World!")
-            .frame(width: 300, height: 300)
-        .background(backgroundColor)
-            .onTapGesture {
-                self.showingActionSheet = true
+        VStack {
+            image?
+            .resizable()
+            .scaledToFit()
         }
-        .actionSheet(isPresented: $showingActionSheet) {
-            ActionSheet(title: Text("Change background"), message: Text("Select a new color"), buttons: [
-                .default(Text("Red"), action:{ self.backgroundColor = .red }),
-                .default(Text("Green"), action:{ self.backgroundColor = .green }),
-                .default(Text("Blue"), action:{ self.backgroundColor = .blue }),
-                .cancel()])
+    .onAppear(perform: loadExample)
+    }
+    
+    func loadExample() {
+        guard let inputImage = UIImage(named: "Example") else { return }
+        let beginImage = CIImage(image: inputImage)
+        
+        let context = CIContext()
+//        let currentFilter = CIFilter.crystallize()
+//
+//        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+//        currentFilter.radius = 200
+        
+        guard let currentFilter = CIFilter(name: "CITwirlDistortion") else { return }
+        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        currentFilter.setValue(200, forKey: kCIInputRadiusKey)
+        currentFilter.setValue(CIVector(x: inputImage.size.width / 2, y: inputImage.size.height / 2), forKey: kCIInputCenterKey)
+        
+        //steps to get Image
+        //get CIImage from our filter output
+        guard let outputImage = currentFilter.outputImage else { return }
+        //attempt to get CGImage from CIImage
+        if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+            //convert cgimage into uiimage
+            let uiimage = UIImage(cgImage: cgimg)
+            //convert uiimage into image
+            image = Image(uiImage: uiimage)
         }
     }
 }
