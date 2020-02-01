@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4065160A23E418DD0090DF0C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065160923E418DD0090DF0C /* ImagePicker.swift */; };
 		40DC4BFA23E2E9750066465E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC4BF923E2E9750066465E /* AppDelegate.swift */; };
 		40DC4BFC23E2E9750066465E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC4BFB23E2E9750066465E /* SceneDelegate.swift */; };
 		40DC4BFE23E2E9750066465E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC4BFD23E2E9750066465E /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4065160923E418DD0090DF0C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		40DC4BF623E2E9750066465E /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DC4BF923E2E9750066465E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40DC4BFB23E2E9750066465E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				40DC4C0423E2E9770066465E /* LaunchScreen.storyboard */,
 				40DC4C0723E2E9770066465E /* Info.plist */,
 				40DC4C0123E2E9770066465E /* Preview Content */,
+				4065160923E418DD0090DF0C /* ImagePicker.swift */,
 			);
 			path = Instafilter;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40DC4BFA23E2E9750066465E /* AppDelegate.swift in Sources */,
+				4065160A23E418DD0090DF0C /* ImagePicker.swift in Sources */,
 				40DC4BFC23E2E9750066465E /* SceneDelegate.swift in Sources */,
 				40DC4BFE23E2E9750066465E /* ContentView.swift in Sources */,
 			);
