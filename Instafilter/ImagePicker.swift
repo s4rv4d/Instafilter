@@ -2,15 +2,13 @@
 //  ImagePicker.swift
 //  Instafilter
 //
-//  Created by Sarvad shetty on 1/31/20.
+//  Created by Sarvad shetty on 2/1/20.
 //  Copyright © 2020 Sarvad shetty. All rights reserved.
 //
 
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
-//    typealias UIViewControllerType = UIImagePickerController
-    
+struct ImagePicker: UIViewControllerRepresentable {    
     //coordinator class
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         var parent: ImagePicker
